@@ -108,7 +108,7 @@ export default class ObDBFetcher extends Plugin {
 				callback: async () => {
 					// 实际执行操作 - 这里示例为打开URL
 
-					await new AirtableFetcher(
+					await new VikaFetcher(
 						fetchSource,
 						this.app
 					).createOrUpdateNotesInOBFromSourceTable(fetchSource);
@@ -150,7 +150,7 @@ class FetchSourceSettingsTab extends PluginSettingTab {
 
 		// 标题
 		containerEl.createEl("h2", {
-			text: t("Airtable Fetch Sources Configuration"),
+			text: t("Vika Fetch Sources Configuration"),
 		});
 
 		// 创建按钮容器
@@ -783,10 +783,10 @@ class FetchSourceEditModal extends Modal {
 		// URL设置
 		new Setting(container)
 			.setName(t("Fetch Source URL"))
-			.setDesc(t("The Airtable URL For This Fetch Source"))
+			.setDesc(t("The Vika URL For This Fetch Source"))
 			.addText((text) =>
 				text
-					.setPlaceholder(t("https://airtable.com/app..."))
+					.setPlaceholder(t("https://vika.cn/workbench/..."))
 					.setValue(this.fetchSource.url)
 					.onChange((value) => {
 						this.fetchSource.url = value;
@@ -796,7 +796,7 @@ class FetchSourceEditModal extends Modal {
 		// API Key设置
 		new Setting(container)
 			.setName(t("API Key"))
-			.setDesc(t("Your Airtable API key"))
+			.setDesc(t("Your Vika API key"))
 			.addText((text) => {
 				// Set initial type to password for security
 				text.inputEl.type = "password";
@@ -846,7 +846,7 @@ class FetchSourceEditModal extends Modal {
 			.setDesc(t("The folder path where notes will be created"))
 			.addText((text) =>
 				text
-					.setPlaceholder(t("e.g., My Notes/Airtable"))
+					.setPlaceholder(t("e.g., My Notes/Vika"))
 					.setValue(this.fetchSource.path)
 					.onChange((value) => {
 						this.fetchSource.path = value;
@@ -892,8 +892,7 @@ class FetchSourceEditModal extends Modal {
 	}
 }
 
-interface AirtableIds {
-	baseId: string;
+interface VikaIds {
 	tableId: string;
 	viewId: string;
 }
@@ -910,10 +909,10 @@ interface Record {
 	fields: RecordFields;
 }
 
-class AirtableFetcher {
+class VikaFetcher {
 	private apiKey: string;
 	apiUrlRoot: string;
-	dataBaseIDs: AirtableIds;
+	dataBaseIDs: VikaIds;
 	app: App;
 	vault: Vault;
 
@@ -921,33 +920,31 @@ class AirtableFetcher {
 		this.apiKey = fetchSource.apiKey;
 		this.app = app;
 		this.vault = app.vault;
-		this.dataBaseIDs = this.extractAirtableIds(fetchSource.url);
-		this.apiUrlRoot = `https://api.airtable.com/v0/`;
+		this.dataBaseIDs = this.extractVikaIds(fetchSource.url);
+		this.apiUrlRoot = `https://vika.cn/fusion/v1/datasheets/`;
 	}
 
-	extractAirtableIds(url: string): AirtableIds {
-		// Regular expression to match Airtable URL pattern
+	extractVikaIds(url: string): VikaIds {
+		// Regular expression to match Vika URL pattern
 		const regex =
-			/https?:\/\/airtable\.com\/(app[^\/]+)\/(tbl[^\/]+)(?:\/(viw[^\/?]+))?/;
+			/https?:\/\/vika\.cn\/workbench\/(dst[^\/]+)\/(viw[^\/]+)/;
 		const match = url.match(regex);
 
 		if (!match) {
 			return {
-				baseId: "",
 				tableId: "",
 				viewId: "",
 			};
 		}
 
 		return {
-			baseId: match[1] || "",
-			tableId: match[2] || "",
-			viewId: match[3] || "",
+			tableId: match[1] || "",
+			viewId: match[2] || "",
 		};
 	}
 
-	makeApiUrl(airtableIds: AirtableIds): string {
-		return `${this.apiUrlRoot}${airtableIds.baseId}/${airtableIds.tableId}?view=${airtableIds.viewId}`;
+	makeApiUrl(vikaIds: VikaIds): string {
+		return `${this.apiUrlRoot}${vikaIds.tableId}/records?fieldKey=name&viewId=${vikaIds.viewId}`;
 	}
 
 	async fetchData() {
@@ -1077,7 +1074,7 @@ class AirtableFetcher {
 				// 为了兼容后续代码，将 responseData 包装成与 requestUrl 返回结构一致
 				const responseObj = { json: responseData };
 
-				const data = responseObj.json;
+				const data = responseObj.json.data;
 				records = records.concat(data.records);
 				new Notice(
 					t("Got {{count}} records", {

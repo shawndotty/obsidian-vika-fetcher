@@ -1,7 +1,7 @@
 export default {
 	Untitled: "未命名",
 	"Fetch {{name}}": "获取 {{name}}",
-	"Airtable Fetch Sources Configuration": "Airtable 数据源获取配置",
+	"Vika Fetch Sources Configuration": "Vika 数据源获取配置",
 	"+ Add New Fetch Source": "+ 添加新数据源",
 	"Import New Fetch Sources": "导入新数据源",
 	"Export All Fetch Sources": "导出所有数据源",
@@ -33,15 +33,15 @@ export default {
 	"A descriptive name for this fetch source": "此数据源的描述性名称",
 	"Enter fetch source name": "输入数据源名称",
 	"Fetch Source URL": "数据源 URL",
-	"The Airtable URL For This Fetch Source": "此数据源的 Airtable URL",
-	"https://airtable.com/app...": "https://airtable.com/app...", // URL示例不翻译
+	"The Vika URL For This Fetch Source": "此数据源的 Vika URL",
+	"https://vika.cn/workbench/...": "https://vika.cn/workbench/...", // URL示例不翻译
 	"API Key": "API 密钥",
-	"Your Airtable API key": "您的 Airtable API 密钥",
+	"Your Vika API key": "您的 Vika API 密钥",
 	"Enter your API key": "输入您的 API 密钥",
 	"Toggle API key visibility": "切换 API 密钥可见性",
 	"Target Path": "目标路径",
 	"The folder path where notes will be created": "笔记将被创建的文件夹路径",
-	"e.g., My Notes/Airtable": "例如：我的笔记/Airtable",
+	"e.g., My Notes/Vika": "例如：我的笔记/Vika",
 	"Include in Export": "导出时包含", // 或 "包含在导出中"
 	"Whether to include this fetch source when exporting":
 		"导出时是否包含此数据源",

@@ -1,8 +1,8 @@
 export default {
 	Untitled: "Untitled",
 	"Fetch {{name}}": "Fetch {{name}}",
-	"Airtable Fetch Sources Configuration":
-		"Airtable Fetch Sources Configuration",
+	"Vika Fetch Sources Configuration":
+		"Vika Fetch Sources Configuration",
 	"+ Add New Fetch Source": "+ Add New Fetch Source",
 	"Import New Fetch Sources": "+ Import New Fetch Sources",
 	"Export All Fetch Sources": "Export All Fetch Sources",
@@ -42,17 +42,17 @@ export default {
 		"A descriptive name for this fetch source",
 	"Enter fetch source name": "Enter fetch source name",
 	"Fetch Source URL": "Fetch Source URL",
-	"The Airtable URL For This Fetch Source":
-		"The Airtable URL For This Fetch Source",
-	"https://airtable.com/app...": "https://airtable.com/app...",
+	"The Vika URL For This Fetch Source":
+		"The Vika URL For This Fetch Source",
+	"https://vika.cn/workbench/...": "https://vika.cn/workbench/...",
 	"API Key": "API Key",
-	"Your Airtable API key": "Your Airtable API key",
+	"Your Vika API key": "Your Vika API key",
 	"Enter your API key": "Enter your API key",
 	"Toggle API key visibility": "Toggle API key visibility",
 	"Target Path": "Target Path",
 	"The folder path where notes will be created":
 		"The folder path where notes will be created",
-	"e.g., My Notes/Airtable": "e.g., My Notes/Airtable",
+	"e.g., My Notes/Vika": "e.g., My Notes/Vika",
 	"Include in Export": "Include in Export",
 	"Whether to include this fetch source when exporting":
 		"Whether to include this fetch source when exporting",
