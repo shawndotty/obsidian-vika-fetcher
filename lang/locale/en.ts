@@ -1,8 +1,7 @@
 export default {
 	Untitled: "Untitled",
 	"Fetch {{name}}": "Fetch {{name}}",
-	"Vika Fetch Sources Configuration":
-		"Vika Fetch Sources Configuration",
+	"Vika Fetch Sources Configuration": "Vika Fetch Sources Configuration",
 	"+ Add New Fetch Source": "+ Add New Fetch Source",
 	"Import New Fetch Sources": "+ Import New Fetch Sources",
 	"Export All Fetch Sources": "Export All Fetch Sources",
@@ -42,8 +41,7 @@ export default {
 		"A descriptive name for this fetch source",
 	"Enter fetch source name": "Enter fetch source name",
 	"Fetch Source URL": "Fetch Source URL",
-	"The Vika URL For This Fetch Source":
-		"The Vika URL For This Fetch Source",
+	"The Vika URL For This Fetch Source": "The Vika URL For This Fetch Source",
 	"https://vika.cn/workbench/...": "https://vika.cn/workbench/...",
 	"API Key": "API Key",
 	"Your Vika API key": "Your Vika API key",
@@ -65,6 +63,7 @@ export default {
 	"All Finished.": "All Finished.",
 	"Got {{count}} records": "Got {{count}} records",
 	"Notes updated today": "Notes updated today",
+	"Notes updated in the pas 3 days": "Notes updated in the pas 3 days",
 	"Notes updated in the past week": "Notes updated in the past week",
 	"Notes updated in the past two weeks":
 		"Notes updated in the past two weeks",
