@@ -46,7 +46,7 @@ const DEFAULT_SETTINGS: ObDBFetcherSettings = {
 	fetchSources: [
 		{
 			name: t("Untitled"),
-			url: "https://example.com",
+			url: "https://vika.cn/workbench/dst...",
 			apiKey: "",
 			path: "",
 			willExport: true,
