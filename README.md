@@ -35,18 +35,16 @@ This plugin allows you to fetch data from a Vika datasheet into your Obsidian va
 ### 2. Plugin Installation and Configuration
 
 1.  **Install Vika Fetcher:**
-    -   Go to `Community Plugins` in Obsidian's settings.
-    -   Search for "Vika Fetcher" and install it.
-    -   Enable the plugin.
+    -   The plugin is not yet available in the official Obsidian Community Plugins market. It is recommended to install it using the [BRAT plugin](https://github.com/TfTHacker/obsidian42-brat).
 2.  **Configure a New Fetch Source:**
     -   Open the plugin settings for "Vika Fetcher".
-    -   Click `+ Add New Fetch Source`.
+    -   Click `+ Add New Fetch Source`. A card will appear for you to edit. Click the **pencil icon** to open edit mode.
     -   **Fetch Source Name:** Give your source a descriptive name (e.g., "My Vika Notes").
     -   **Fetch Source URL:** Paste the Vika datasheet URL you copied earlier.
     -   **API Key:** Paste your Vika API key.
     -   **Target Path:** Specify the folder in your Obsidian vault where you want to save the notes (e.g., `Vika Notes/Inbox`).
     -   **Include in Export:** Check this if you want to include this source when exporting settings.
-    -   Click `Save`.
+    -   Click `OK`.
 3.  **Reload Obsidian:** It's a good practice to reload Obsidian after making changes to the settings.
 
 ### 3. Fetching Your Notes

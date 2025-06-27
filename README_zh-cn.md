@@ -35,7 +35,7 @@
 ### 2. 插件安装与配置
 
 1.  **安装 Vika Fetcher：**
-    -   插件暂未发布到 Obsidian 官方插件市场，建议使用 Brat 插件进行安装
+    -   插件暂未发布到 Obsidian 官方插件市场，建议使用 [Brat 插件](https://github.com/TfTHacker/obsidian42-brat) 进行安装
 2.  **配置新的抓取源：**
     -   打开 "Vika Fetcher" 的插件设置。
     -   点击 `+ 添加新数据源`。将出现一个卡片供您编辑。点击 **铅笔图标** 打开编辑模式。
