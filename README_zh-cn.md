@@ -28,7 +28,7 @@
     -   `Title` (单行文本): 您的笔记标题。这将用作文件名。
     -   `MD` (多行文本): Markdown 格式的笔记内容。
     -   `SubFolder` (单行文本, 可选): 如果您想将笔记保存在子文件夹中，请在此处指定文件夹名称。
-    -   `UpdatedIn` (数字): 表示最后更新时间的时间戳（例如 Unix 时间戳）。这用于基于日期的筛选。
+    -   `UpdatedIn` (公式字段)，可以使用这个公式`DATETIME_DIFF(NOW(),LAST_MODIFIED_TIME(),"days")`，获取当前记录最后一次更新距离现在的天数: 。
     -   `Extension` (单行文本, 可选): 笔记的文件扩展名（例如 "md", "txt"）。如果未提供，则默认为 "md"。
 5.  **复制 URL：** 打开您刚刚创建的维格表，并从浏览器的地址栏复制 URL。它应该看起来像 `https://vika.cn/workbench/dst.../viw...`。
 
