@@ -1,3 +1,5 @@
+[简体中文](README_zh-cn.md)
+
 # Obsidian Vika Fetcher
 
 This plugin allows you to fetch data from a Vika datasheet into your Obsidian vault, creating or updating notes based on the records in your Vika table.

@@ -1,3 +1,5 @@
+[English](README.md)
+
 # Obsidian Vika Fetcher
 
 该插件允许您将维格表（Vika）中的数据抓取到您的 Obsidian 仓库中，并根据维格表中的记录创建或更新笔记。
