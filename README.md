@@ -28,7 +28,7 @@ This plugin allows you to fetch data from a Vika datasheet into your Obsidian va
     -   `Title` (Single Line Text): The title of your note. This will be used as the filename.
     -   `MD` (Multi-Line Text): The content of your note in Markdown format.
     -   `SubFolder` (Single Line Text, Optional): If you want to save notes in a subfolder, specify the folder name here.
-    -   `UpdatedIn` (Number): A timestamp (e.g., Unix timestamp) indicating the last update time. This is used for date-based filtering.
+    -   `UpdatedIn` (Formula Field): You can use the formula `DATETIME_DIFF(NOW(),LAST_MODIFIED_TIME(),"days")` to get the number of days since the last update of the current record. This is used for date-based filtering.
     -   `Extension` (Single Line Text, Optional): The file extension for the note (e.g., "md", "txt"). Defaults to "md" if not provided.
 5.  **Copy the URL:** Open the datasheet you just created and copy the URL from your browser's address bar. It should look something like `https://vika.cn/workbench/dst.../viw...`.
 
