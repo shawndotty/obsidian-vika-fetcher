@@ -6,3 +6,121 @@ available in the app when your plugin is enabled.
 If your plugin does not need CSS, delete this file.
 
 */
+
+/* Vika Fetcher Card Styles */
+.top-button-container .setting-item-info {
+	display: none;
+}
+
+.fetch-source-cards-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 16px;
+	margin-top: 16px;
+	margin-bottom: 0;
+	padding: 0;
+}
+
+.fetch-source-card {
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 8px;
+	padding: 16px;
+	background: var(--background-primary);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	transition: box-shadow 0.2s ease;
+	margin: 0;
+}
+
+.fetch-source-card:hover {
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.fetch-source-card-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 12px;
+	padding-bottom: 8px;
+	border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.fetch-source-name {
+	margin: 0;
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--text-normal);
+	flex: 1;
+}
+
+.fetch-source-actions {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.fetch-source-toggle {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+}
+
+.toggle-label {
+	font-size: 12px;
+	color: var(--text-muted);
+}
+
+.fetch-source-toggle-input {
+	margin: 0;
+}
+
+.fetch-source-action-btn {
+	background: none;
+	border: none;
+	padding: 4px;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 14px;
+	transition: background-color 0.2s ease;
+}
+
+.fetch-source-action-btn:hover {
+	background-color: var(--background-modifier-hover);
+}
+
+.edit-btn:hover {
+	background-color: var(--interactive-accent-hover);
+}
+
+.copy-btn:hover {
+	background-color: var(--interactive-success-hover);
+}
+
+.delete-btn:hover {
+	background-color: var(--interactive-danger-hover);
+}
+
+.fetch-source-card-content {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	margin: 0;
+}
+
+.fetch-source-info {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 13px;
+	margin: 0;
+}
+
+.info-label {
+	color: var(--text-muted);
+	font-weight: 500;
+	min-width: 60px;
+}
+
+.info-value {
+	color: var(--text-normal);
+	word-break: break-all;
+}
