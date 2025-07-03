@@ -1,28 +1,6 @@
-import {
-	App,
-	Editor,
-	MarkdownView,
-	normalizePath,
-	Modal,
-	Notice,
-	Plugin,
-	PluginSettingTab,
-	FuzzySuggestModal,
-	FuzzyMatch,
-	Vault,
-	Setting,
-	setIcon,
-} from "obsidian";
-
+import { Notice, Plugin } from "obsidian";
 import { t } from "./lang/helpers";
-import type {
-	FetchSourceSetting,
-	ObDBFetcherSettings,
-	VikaIds,
-	RecordFields,
-	Record,
-	DateFilterOption,
-} from "./types";
+import type { FetchSourceSetting, ObDBFetcherSettings } from "./types";
 import { FetchSourceSettingsTab } from "./settings";
 import { VikaFetcher } from "./VikaFetcher";
 
