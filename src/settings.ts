@@ -41,7 +41,7 @@ export class FetchSourceSettingsTab extends PluginSettingTab {
 					.setButtonText(t("+ Add New Fetch Source"))
 					.setCta()
 					.onClick(() => {
-						this.plugin.settings.fetchSources.push({
+						this.plugin.settings.fetchSources.unshift({
 							name: "",
 							url: "",
 							apiKey: "",
