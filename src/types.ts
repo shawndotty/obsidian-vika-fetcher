@@ -9,7 +9,7 @@ export interface FetchSourceSetting {
 }
 
 // 插件整体设置
-export interface ObDBFetcherSettings {
+export interface ObVikaFetcherSettings {
 	fetchSources: FetchSourceSetting[];
 }
 

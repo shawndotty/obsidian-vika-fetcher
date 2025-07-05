@@ -1,8 +1,9 @@
 import { Notice, Plugin } from "obsidian";
 import { t } from "./lang/helpers";
-import type { FetchSourceSetting, ObDBFetcherSettings } from "./src/types";
+import { encodeBase64, decodeBase64 } from "./src/utils";
+import type { FetchSourceSetting, ObVikaFetcherSettings } from "./src/types";
 import { FetchSourceSettingsTab } from "./src/settings";
-import { VikaFetcher } from "./src/VikaFetcher";
+import { VikaFetcher } from "./src/vika-fetcher";
 
 // 扩展 App 类型以包含 commands 属性
 declare module "obsidian" {
@@ -15,7 +16,7 @@ declare module "obsidian" {
 
 // Remember to rename these classes and interfaces!
 
-const DEFAULT_SETTINGS: ObDBFetcherSettings = {
+const DEFAULT_SETTINGS: ObVikaFetcherSettings = {
 	fetchSources: [
 		{
 			name: t("Untitled"),
@@ -27,8 +28,8 @@ const DEFAULT_SETTINGS: ObDBFetcherSettings = {
 	],
 };
 
-export default class ObDBFetcher extends Plugin {
-	settings: ObDBFetcherSettings;
+export default class ObVikaFetcher extends Plugin {
+	settings: ObVikaFetcherSettings;
 	private commandIds: Set<string> = new Set(); // 跟踪已注册的命令ID
 
 	async onload() {
@@ -54,12 +55,23 @@ export default class ObDBFetcher extends Plugin {
 				if (!fetchSource.id) {
 					fetchSource.id = this.generateUniqueId();
 				}
+				// 解码apiKey
+				if (fetchSource.apiKey) {
+					fetchSource.apiKey = decodeBase64(fetchSource.apiKey);
+				}
 			}
 		);
 	}
 
 	async saveSettings() {
-		await this.saveData(this.settings);
+		// 保存前对apiKey编码
+		const settingsToSave = JSON.parse(JSON.stringify(this.settings));
+		settingsToSave.fetchSources.forEach((fetchSource: any) => {
+			if (fetchSource.apiKey) {
+				fetchSource.apiKey = encodeBase64(fetchSource.apiKey);
+			}
+		});
+		await this.saveData(settingsToSave);
 	}
 
 	// 生成唯一ID（使用时间戳+随机数）
