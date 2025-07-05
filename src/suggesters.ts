@@ -1,6 +1,6 @@
 import { FuzzySuggestModal, FuzzyMatch } from "obsidian";
-import { t } from "./lang/helpers";
-import type { DateFilterOption } from "./types";
+import { t } from "../lang/helpers";
+import { DateFilterOption } from "./types";
 
 export class DateFilterSuggester extends FuzzySuggestModal<DateFilterOption> {
 	private options: DateFilterOption[] = [

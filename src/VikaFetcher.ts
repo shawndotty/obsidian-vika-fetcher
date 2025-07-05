@@ -1,5 +1,5 @@
 import { App, Vault, normalizePath, Notice } from "obsidian";
-import { t } from "./lang/helpers";
+import { t } from "../lang/helpers";
 import type {
 	FetchSourceSetting,
 	VikaIds,

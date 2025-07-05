@@ -6,10 +6,10 @@ import {
 	Setting,
 	setIcon,
 } from "obsidian";
-import { t } from "./lang/helpers";
-import type { FetchSourceSetting, DateFilterOption } from "./types";
-import type ObDBFetcher from "./main";
+import { t } from "../lang/helpers";
+import type ObDBFetcher from "../main";
 import { FetchSourceEditModal } from "./modals";
+import { FetchSourceSetting } from "./types";
 
 export class FetchSourceSettingsTab extends PluginSettingTab {
 	plugin: ObDBFetcher;
