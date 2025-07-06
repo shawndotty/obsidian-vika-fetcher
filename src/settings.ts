@@ -6,8 +6,8 @@ import {
 	Setting,
 	setIcon,
 } from "obsidian";
-import { t } from "../lang/helpers";
-import ObDBFetcher from "../main";
+import { t } from "./lang/helpers";
+import ObDBFetcher from "./main";
 import { FetchSourceEditModal } from "./modals";
 import { FetchSourceSetting } from "./types";
 import { encodeBase64, decodeBase64 } from "./utils";

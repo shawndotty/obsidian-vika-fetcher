@@ -1,9 +1,9 @@
 import { Notice, Plugin } from "obsidian";
 import { t } from "./lang/helpers";
-import { encodeBase64, decodeBase64 } from "./src/utils";
-import type { FetchSourceSetting, ObVikaFetcherSettings } from "./src/types";
-import { FetchSourceSettingsTab } from "./src/settings";
-import { VikaFetcher } from "./src/vika-fetcher";
+import { encodeBase64, decodeBase64 } from "./utils";
+import type { FetchSourceSetting, ObVikaFetcherSettings } from "./types";
+import { FetchSourceSettingsTab } from "./settings";
+import { VikaFetcher } from "./vika-fetcher";
 
 // 扩展 App 类型以包含 commands 属性
 declare module "obsidian" {
